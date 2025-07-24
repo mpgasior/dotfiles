@@ -26,6 +26,7 @@ return {
 			"<CMD> Telescope find_files hidden=true<CR>",
 			{ desc = "Telescope find files" }
 		)
+		vim.keymap.set("n", "<C-p>", "<CMD> Telescope git_files <CR>", { desc = "Telescope git files" })
 		vim.keymap.set("n", "<leader>pg", "<CMD> Telescope live_grep hidden=true<CR>", { desc = "Telescope live grep" })
 	end,
 }
