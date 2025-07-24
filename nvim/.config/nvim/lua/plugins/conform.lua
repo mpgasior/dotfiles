@@ -22,7 +22,12 @@ return {
 		formatters_by_ft = {
 			lua = { "stylua" },
 			json = { "prettier" },
+			yaml = { "yamlfmt" },
+			yml = { "yamlfmt" },
 			sh = { "shfmt" },
+		},
+		default_format_opts = {
+			lsp_format = "fallback",
 		},
 		format_on_save = function(bufnr)
 			if vim.g.disable_autoformat or vim.b[bufnr].disable_autoformat then
