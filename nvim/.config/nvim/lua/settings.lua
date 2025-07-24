@@ -26,5 +26,6 @@ vim.opt.updatetime = 300 -- Faster update for CursorHold, diagnostics etc. (in m
 vim.opt.timeoutlen = 500 -- Time to wait for a key sequence to complete (e.g., leader key)
 vim.opt.ttimeoutlen = 0 -- No timeout for terminal key codes (e.g., function keys)
 
+-- Disabling netrw
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
