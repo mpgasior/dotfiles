@@ -5,10 +5,19 @@ return {
 	dependencies = {
 		"nvim-tree/nvim-web-devicons",
 	},
-	config = function()
-		require("nvim-tree").setup({})
-
-		vim.keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>", { desc = "Toggle NvimTree" })
-		vim.keymap.set("n", "<leader>ef", ":NvimTreeFocus<CR>", { desc = "Focus NvimTree" })
-	end,
+	opts = {},
+	keys = {
+		--{
+		--	"<leader>e",
+		--	":NvimTreeToggle<CR>",
+		--	mode = "n",
+		--	desc = "Toggle NvimTree",
+		--},
+		{
+			"<leader>e",
+			":NvimTreeFocus<CR>",
+			mode = "n",
+			desc = "Focus NvimTree",
+		},
+	},
 }
