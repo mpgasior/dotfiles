@@ -28,5 +28,11 @@ return {
 		)
 		vim.keymap.set("n", "<C-p>", "<CMD> Telescope git_files <CR>", { desc = "Telescope git files" })
 		vim.keymap.set("n", "<leader>pg", "<CMD> Telescope live_grep hidden=true<CR>", { desc = "Telescope live grep" })
+		vim.keymap.set(
+			"n",
+			"<leader>pb",
+			"<CMD> Telescope current_buffer_fuzzy_find<CR>",
+			{ desc = "Telescope current buffer ff" }
+		)
 	end,
 }
