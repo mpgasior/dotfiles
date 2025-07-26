@@ -1,7 +1,10 @@
 return {
 	{
 		"nvim-telescope/telescope.nvim",
-		dependencies = { "nvim-lua/plenary.nvim" },
+		dependencies = {
+			"nvim-lua/plenary.nvim",
+			{ "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
+		},
 		branch = "0.1.x",
 		config = function()
 			require("telescope").setup({
@@ -46,12 +49,15 @@ return {
 					is_inside_work_tree[cwd] = vim.v.shell_error == 0
 				end
 
+				local opts = { hidden = true, show_untracked = true }
+
 				if is_inside_work_tree[cwd] then
 					require("telescope.builtin").git_files(opts)
 				else
 					require("telescope.builtin").find_files(opts)
 				end
 			end, { desc = "Telescope find files (git or all)" })
+			vim.keymap.set("n", "<leader>ft", "<CMD> Telescope<CR>", { desc = "Telescope" })
 			vim.keymap.set(
 				"n",
 				"<leader>fg",
@@ -64,7 +70,12 @@ return {
 				"<CMD> Telescope current_buffer_fuzzy_find<CR>",
 				{ desc = "Telescope current buffer ff" }
 			)
+			vim.keymap.set(
+				"n",
+				"<leader>fd",
+				"<CMD> Telescope diagnostics bufnr=0<CR>",
+				{ desc = "Telescope current buffer diagnostics" }
+			)
 		end,
 	},
-	{ "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
 }

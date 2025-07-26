@@ -11,12 +11,6 @@ return {
 		},
 	},
 	keys = {
-		--{
-		--	"<leader>e",
-		--	":NvimTreeToggle<CR>",
-		--	mode = "n",
-		--	desc = "Toggle NvimTree",
-		--},
 		{
 			"<leader>e",
 			":NvimTreeFocus<CR>",
