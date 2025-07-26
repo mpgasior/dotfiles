@@ -9,7 +9,6 @@ return {
 			"shfmt",
 			"stylua",
 			"vimls",
-			"yamlfmt",
 		},
 	},
 	dependencies = {

@@ -1,12 +1,3 @@
-# Exports
-export NNN_OPTS="Hd"
-export EDITOR=nvim
-
-# Aliases
-alias podman='flatpak-spawn --host podman'
-alias vim=nvim
-alias htop=btop
-
 # Functions
 
 # nnn (cd on quit)
