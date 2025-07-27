@@ -48,6 +48,7 @@ return {
 
 				if is_wsl then
 					require("telescope.builtin").find_files(opts)
+					return
 				end
 
 				local cwd = vim.fn.getcwd()
