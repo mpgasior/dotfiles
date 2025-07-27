@@ -1,8 +1,8 @@
--- General UI and Behaviord
+-- General UI and Behavior
 vim.o.number = true
 vim.o.encoding = "utf-8"
 vim.o.fileencoding = "utf-8"
-vim.o.winborder = "rounded"
+vim.opt.winborder = "rounded"
 
 vim.opt.undofile = true -- Enable persistent undo history
 vim.opt.undodir = os.getenv("HOME") .. "/.config/nvim/undo" -- Directory for undo files
@@ -36,3 +36,9 @@ vim.g.loaded_netrwPlugin = 1
 vim.diagnostic.config({
 	virtual_text = true,
 })
+
+-- Copilot something
+vim.g.copilot_no_tab_map = true
+vim.g.copilot_filetypes = {
+	["*"] = false,
+}
