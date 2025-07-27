@@ -34,7 +34,7 @@ return {
 		},
 		-- (Default) Only show the documentation popup when manually triggered
 		completion = { documentation = { auto_show = true } },
-
+		signature = { enabled = true },
 		-- Default list of enabled providers defined so that you can extend it
 		-- elsewhere in your config, without redefining it, due to `opts_extend`
 		sources = {
@@ -47,6 +47,10 @@ return {
 		--
 		-- See the fuzzy documentation for more information
 		fuzzy = { implementation = "prefer_rust_with_warning" },
+		cmdline = {
+			keymap = { preset = "inherit" },
+			completion = { menu = { auto_show = true } },
+		},
 	},
 	opts_extend = { "sources.default" },
 }
