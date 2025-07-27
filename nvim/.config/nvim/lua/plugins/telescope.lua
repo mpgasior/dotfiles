@@ -44,15 +44,19 @@ return {
 			local is_wsl = os.getenv("WSL_DISTRO_NAME") ~= nil
 
 			vim.keymap.set("n", "<leader>ff", function()
+				local opts = { hidden = true, show_untracked = true }
+
+				if is_wsl then
+					require("telescope.builtin").find_files(opts)
+				end
+
 				local cwd = vim.fn.getcwd()
 				if is_inside_work_tree[cwd] == nil then
 					vim.fn.system("git rev-parse --is-inside-work-tree")
 					is_inside_work_tree[cwd] = vim.v.shell_error == 0
 				end
 
-				local opts = { hidden = true, show_untracked = true }
-
-				if is_inside_work_tree[cwd] and not is_wsl then
+				if is_inside_work_tree[cwd] then
 					require("telescope.builtin").git_files(opts)
 				else
 					require("telescope.builtin").find_files(opts)
