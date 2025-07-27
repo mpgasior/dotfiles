@@ -2,6 +2,8 @@
 vim.o.number = true
 vim.o.encoding = "utf-8"
 vim.o.fileencoding = "utf-8"
+vim.o.winborder = "rounded"
+
 vim.opt.undofile = true -- Enable persistent undo history
 vim.opt.undodir = os.getenv("HOME") .. "/.config/nvim/undo" -- Directory for undo files
 
@@ -29,3 +31,8 @@ vim.opt.ttimeoutlen = 0 -- No timeout for terminal key codes (e.g., function key
 -- Disabling netrw
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
+
+-- Diagnostics
+vim.diagnostic.config({
+	virtual_text = true,
+})

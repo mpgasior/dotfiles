@@ -4,12 +4,6 @@ vim.lsp.config("lua_ls", {
 			runtime = {
 				version = "LuaJIT",
 			},
-			diagnostics = {
-				globals = {
-					"vim",
-					"require",
-				},
-			},
 			workspace = {
 				checkThirdParty = false,
 				library = {

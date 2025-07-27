@@ -1,6 +1,6 @@
 return {
 	"rcarriga/nvim-notify",
-	lazy = false,
+	event = "VeryLazy",
 	config = function()
 		require("notify").setup({})
 		vim.notify = require("notify")
