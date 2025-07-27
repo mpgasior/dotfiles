@@ -14,8 +14,7 @@ vim.api.nvim_set_keymap("i", "<C-s>", "<C-o>:w<CR>", { noremap = true, silent = 
 -- LSP
 -- Helper function to check if LSP is attached to the current buffer
 local function lsp_attached()
-	--	return vim.lsp.buf_is_attached(0)
-	return true
+	return vim.lsp.buf_is_attached(0)
 end
 
 -- Go to Definition
