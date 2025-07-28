@@ -20,7 +20,7 @@ Use the `--target=$HOME` flag to link the dotfiles to your home directory.
 To link all configurations:
 
 ```bash
-stow --target=$HOME *
+stow --target=$HOME */
 ```
 
 *Note: Ensure you are in the `~/.dotfiles` directory when running stow commands.*
