@@ -14,6 +14,7 @@ return {
 				"^\\.git$",
 			},
 		},
+		view = { width = { min = "30%" } },
 	},
 	keys = {
 		{
@@ -21,6 +22,12 @@ return {
 			":NvimTreeFocus<CR>",
 			mode = "n",
 			desc = "Focus NvimTree",
+		},
+		{
+			"<leader>h",
+			":NvimTreeToggle<CR>",
+			mode = "n",
+			desc = "Toogle NvimTree",
 		},
 	},
 }
