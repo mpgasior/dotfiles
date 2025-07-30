@@ -14,7 +14,7 @@ return {
 				"^\\.git$",
 			},
 		},
-		view = { width = { min = "30%" } },
+		view = { width = { min = "25%", max = "25%" } },
 	},
 	keys = {
 		{

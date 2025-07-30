@@ -41,15 +41,9 @@ return {
 			require("telescope").load_extension("fzf")
 
 			local is_inside_work_tree = {}
-			local is_wsl = os.getenv("WSL_DISTRO_NAME") ~= nil
 
 			vim.keymap.set("n", "<leader>ff", function()
 				local opts = { hidden = true, show_untracked = true }
-
-				if is_wsl then
-					require("telescope.builtin").find_files(opts)
-					return
-				end
 
 				local cwd = vim.fn.getcwd()
 				if is_inside_work_tree[cwd] == nil then
