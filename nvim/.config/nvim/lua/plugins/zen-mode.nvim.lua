@@ -9,6 +9,9 @@ return {
 		},
 	},
 	opts = {
-		window = { width = 0.5 },
+		window = {
+			height = 0.95,
+			width = 0.5,
+		},
 	},
 }
