@@ -7,8 +7,6 @@ return {
 			local is_inside_work_tree = {}
 
 			vim.keymap.set("n", "<leader>ff", function()
-				local opts = { hidden = true, show_untracked = true }
-
 				local cwd = vim.fn.getcwd()
 				if is_inside_work_tree[cwd] == nil then
 					vim.fn.system("git rev-parse --is-inside-work-tree")
@@ -16,26 +14,16 @@ return {
 				end
 
 				if is_inside_work_tree[cwd] then
-					require("fzf-lua").git_files(opts)
+					require("fzf-lua").git_files()
 				else
-					require("fzf-lua").files(opts)
+					require("fzf-lua").files()
 				end
-			end, { desc = "Telescope find files (git or all)" })
-			vim.keymap.set("n", "<leader>ft", "<CMD> FzfLua<CR>", { desc = "Telescope" })
+			end, { desc = "FzfLua find files (git or all)" })
+			vim.keymap.set("n", "<leader>ft", "<CMD> FzfLua<CR>", { desc = "FzfLua" })
 			vim.keymap.set("n", "<leader>fg", function()
-				local cwd = vim.fn.getcwd()
-				if is_inside_work_tree[cwd] == nil then
-					vim.fn.system("git rev-parse --is-inside-work-tree")
-					is_inside_work_tree[cwd] = vim.v.shell_error == 0
-				end
-
-				local opts = {}
-				if is_inside_work_tree[cwd] then
-					opts = { cmd = "git grep --line-number --column --color=always" }
-				end
-				require("fzf-lua").live_grep(opts)
-			end, { desc = "Telescope live grep" })
-			vim.keymap.set("n", "<leader>fb", "<CMD> FzfLua grep_curbuf<CR>", { desc = "Telescope current buffer ff" })
+				require("fzf-lua").live_grep()
+			end, { desc = "FzfLua live grep" })
+			vim.keymap.set("n", "<leader>fb", "<CMD> FzfLua grep_curbuf<CR>", { desc = "FzfLua current buffer ff" })
 		end,
 	},
 }
