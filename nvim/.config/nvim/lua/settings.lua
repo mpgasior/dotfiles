@@ -8,8 +8,8 @@ vim.opt.undofile = true -- Enable persistent undo history
 vim.opt.undodir = os.getenv("HOME") .. "/.config/nvim/undo" -- Directory for undo files
 
 -- Indentation & Formatting
-vim.opt.tabstop = 4 -- Number of spaces a tab character counts for
-vim.opt.shiftwidth = 4 -- Number of spaces for (auto)indentation
+vim.opt.tabstop = 2 -- Number of spaces a tab character counts for
+vim.opt.shiftwidth = 2 -- Number of spaces for (auto)indentation
 vim.opt.expandtab = true -- Convert typed tabs into spaces
 vim.opt.autoindent = true -- Copy indent from previous line
 vim.opt.smartindent = true -- Smart auto-indent for C-like languages
