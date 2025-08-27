@@ -15,10 +15,10 @@ open = [
 
 [open]
 prepend_rules = [
-	{ name = "*", use = "open", for ="windows" },
+	{ name = "*", use = "open", for = "windows" },
 ]
 
 [edit]
 prepend_rules = [
-	{ name = "*", use = "edit", for ="windows" },
+	{ name = "*", use = "edit", for = "windows" },
 ]
