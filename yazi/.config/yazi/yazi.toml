@@ -1,0 +1,24 @@
+[mgr]
+linemode="size"
+show_hidden=true
+show_symlink=true
+
+[opener]
+edit = [
+	{ run = 'nvim.exe %*', block = true, desc = "Neovim", for = "windows" },
+  { run = '$EDITOR "$@"', block = true, for = "unix" },
+]
+
+open = [
+	{ run = 'nvim.exe %*', block = true, desc = "Neovim", for = "windows" },
+]
+
+[open]
+prepend_rules = [
+	{ name = "*", use = "open", for = "windows" },
+]
+
+[edit]
+prepend_rules = [
+	{ name = "*", use = "edit", for = "windows" },
+]

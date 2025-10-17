@@ -6,6 +6,7 @@ return {
 		"nvim-tree/nvim-web-devicons",
 	},
 	opts = {
+		hijack_netrw = false,
 		update_focused_file = {
 			enable = true,
 		},
