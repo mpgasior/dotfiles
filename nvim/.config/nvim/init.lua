@@ -59,6 +59,7 @@ vim.pack.add({
   { src = "https://github.com/nvim-tree/nvim-tree.lua" },
   { src = "https://github.com/folke/which-key.nvim" },
   { src = "https://github.com/folke/tokyonight.nvim" },
+  { src = "https://github.com/neanias/everforest-nvim" },
   { src = "https://github.com/mason-org/mason.nvim" },
   { src = "https://github.com/neovim/nvim-lspconfig" },
   { src = "https://github.com/mason-org/mason-lspconfig.nvim" },
@@ -158,4 +159,5 @@ vim.lsp.config("lua_ls", {
   },
 })
 
-vim.cmd([[colorscheme tokyonight]])
+--vim.cmd([[colorscheme tokyonight]])
+vim.cmd([[colorscheme everforest]])
