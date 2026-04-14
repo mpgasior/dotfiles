@@ -142,6 +142,26 @@ vim.api.nvim_create_autocmd('LspAttach', {
   end,
 })
 
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "qf",
+  callback = function()
+    -- Map 'dd' to a function that deletes the current line from the list
+    vim.keymap.set("n", "dd", function()
+      local qf_list = vim.fn.getqflist()
+      local cur_line = vim.fn.line(".")
+
+      -- Remove the item from the table
+      table.remove(qf_list, cur_line)
+
+      -- Update the quickfix list with the new table ('r' means replace)
+      vim.fn.setqflist(qf_list, 'r')
+
+      -- Keep the cursor on the same line number
+      vim.api.nvim_win_set_cursor(0, { cur_line, 0 })
+    end, { buffer = true, desc = "Remove item from Quickfix" })
+  end,
+})
+
 vim.lsp.config("lua_ls", {
   settings = {
     Lua = {
@@ -164,4 +184,5 @@ vim.lsp.config("lua_ls", {
 require('everforest').setup({
   spell_foreground = true,
 })
+
 vim.cmd([[colorscheme everforest]])
