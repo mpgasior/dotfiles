@@ -40,7 +40,8 @@ vim.g.loaded_netrwPlugin = 1
 -- Diagnostics
 vim.diagnostic.config({
   virtual_text = true,
-  virtual_lines = false,
+  --virtual_lines = true,
+  virtual_lines = { current_line = true },
 })
 
 -- Search
@@ -160,4 +161,7 @@ vim.lsp.config("lua_ls", {
 })
 
 --vim.cmd([[colorscheme tokyonight]])
+require('everforest').setup({
+  spell_foreground = true,
+})
 vim.cmd([[colorscheme everforest]])
