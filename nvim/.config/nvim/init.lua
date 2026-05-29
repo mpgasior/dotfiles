@@ -82,6 +82,7 @@ require('yazi').setup({
   },
 })
 vim.keymap.set("n", "<leader>-", "<CMD> Yazi<CR>", { desc = "Open yazi at current file" })
+vim.keymap.set("n", "<leader>wd", "<CMD> Yazi cwd<CR>", { desc = "Open yazi at current working dir" })
 
 require('nvim-tree').setup({
   hijack_netrw = false,
